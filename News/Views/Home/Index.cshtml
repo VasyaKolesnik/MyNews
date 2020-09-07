@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<nav class="nav">
+    @foreach (var category in ViewBag.Categories)
+    {
+        <a class="a" href="/Home/CategoryViews/@category.Id">@category.CategoryNews</a>
+    }
+</nav>
+<table>
+    <tr class="category-title">
+        <th class="name-n">Название новости</th>
+        <th class="text-t">Текст</th>
+        <th class="date-d">Дата публикации</th>
+        <th class="img-i">Фото</th>
+        <th class="category-c">Категория</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr class="th">
+            <td class="name">
+                @item.Name
+            </td>
+            <td class="text">
+                @item.Text
+            </td>
+            <td class="date">
+                @item.Date
+            </td>
+            <td class="img">
+                <img src="~/Content/img/@item.Image" style="width:15%" alt="" />
+            </td>
+            <td class="category">
+                @item.Category.CategoryNews
+            </td>
+            <td class="button-table">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "ar" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "ar" }) |
+                <br />
+                @Html.ActionLink("Просмотр", "NewsView", new { id = item.Id }, new { @class = "ar" })
+            </td>
+        </tr>
+    }
+</table>

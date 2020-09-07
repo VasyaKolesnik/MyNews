@@ -1,0 +1,31 @@
+﻿@model News.Models.FakeNews
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Просмотр новости</h2>
+<table>
+    @using (Html.BeginForm())
+    {
+        <tr class="th">
+            <td class="name">
+                @Html.DisplayFor(model => model.Name)
+            </td>
+
+            <td class="text">
+                @Html.DisplayFor(model => model.Text)
+            </td>
+            <td class="img">
+                <img src="~/Content/img/@Model.Image" style="width:15%" alt="" />
+            </td>
+            <td class="date">
+                @Html.DisplayFor(model => model.Date)
+            </td>
+            <td class="category">
+                @Html.DisplayFor(model => model.Category.CategoryNews)
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    @Html.ActionLink("Вернуться к списку новостей", "Index")
+</div>

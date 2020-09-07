@@ -1,0 +1,97 @@
+﻿
+.category-title {
+    display: flex;
+    margin-bottom: 7px;
+    width: 1300px;
+    height: 60px;
+    align-items: center;
+    background: #3c3a3a;
+    box-shadow: 0px 0px 8px rgb(110, 110, 110);
+    color: #ffffff;
+}
+.th {
+    margin-bottom: 20px;
+    width: 1300px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    background: #808080;
+    box-shadow: 0px 0px 8px rgb(110, 110, 110);
+    transform: scale(1);
+    transition: all 0.2s;
+    color: aliceblue;
+}
+
+    .th:hover {
+        background: #424040;
+        transform: scale(1.05);
+    }
+
+.name {
+    text-align: left;
+    margin-left: 2.5em;
+    width: 8%;
+}
+.name-n {
+    text-align: left;
+    margin-left: 2.5em;
+    width: 8%;
+}
+.img {
+    max-width: 70em;
+    min-height: 5em;
+    margin-left: auto;
+    margin-right: -40em;
+    width: 55%;
+}
+.img-i {
+    margin-left: auto;
+    margin-right: -51em;
+    width: 55%;
+}
+.text {
+    text-align: left;
+    margin-left: 1em;
+    width: 25%;
+}
+.text-t {
+    text-align: left;
+    margin-left: 8em;
+    width: 25%;
+}
+.date {
+    width: 14%;
+    margin-left: 4em;
+}
+.date-d {
+    margin-left: -2em;
+    width: 5%;
+}
+.category {
+    margin-left: auto;
+    margin-right: -2em;
+    width: 15%;
+}
+.category-c {
+    margin-left: auto;
+    margin-right: 12em;
+    width: 15%;
+}
+
+.a {
+    height: 45px;
+    width: 220px;
+    text-align: center;
+    line-height: 40px;
+    color: #000000;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+}
+.button-table {
+    width: 15%;
+}
+.ar {
+    color: #ffffff;
+    font-weight:bold;
+}

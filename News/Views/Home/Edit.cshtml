@@ -1,0 +1,43 @@
+﻿@model News.Models.FakeNewsViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Редактирование новости</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-vertical form-bordered form-striped form-validate", enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Новость</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <p>
+            Название новости <br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+
+        <p>
+            Текст новости <br />
+            @Html.EditorFor(model => model.Text)
+        </p>
+        @*<p>
+                Дата публицации <br />
+                @Html.EditorFor(model => model.Date)
+            </p>*@
+        <p>
+            Файл
+            @Html.TextBoxFor(model => model.ImgFile, new { type = "file", @class = "input-block-level" })
+        </p>
+        <p>
+            Категория <br />
+            @Html.DropDownListFor(model => model.CategoryId, ViewBag.Category as SelectList)
+        </p>
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Вернуться к списку новостей", "Index")
+</div>
+

@@ -1,0 +1,25 @@
+﻿@model News.Models.Category
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавление новой категории новостей</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Категория</legend>
+
+            <p>
+                Название <br />
+                @Html.EditorFor(model => model.CategoryNews)
+            </p>
+            <p>
+                <input type="submit" value="Добавить категорию" />
+            </p>
+        </fieldset>
+    }
+    <div>
+        @Html.ActionLink("К списку новостей", "Index")
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model News.Models.FakeNewsViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавление новой новости</h2>
+<div>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-vertical form-bordered form-striped form-validate", enctype = "multipart/form-data" }))
+    {
+    <fieldset>
+        <legend>Новость</legend>
+
+        <p>
+            Название новости <br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+
+        <p>
+            Текст <br />
+            @Html.EditorFor(model => model.Text)
+        </p>
+
+        <p>
+            Файл
+            @Html.TextBoxFor(_ => _.ImgFile, new { type = "file", @class = "input-block-level" })
+        </p>
+        <p>
+            Категория <br />
+            @Html.DropDownListFor(model => model.CategoryId, ViewBag.Category as SelectList)
+        </p>
+
+        <p>
+            <input type="submit" value="Добавить новость" />
+        </p>
+    </fieldset>
+    }
+    <div>
+        @Html.ActionLink("К списку новостей", "Index")
+    </div>
+</div>

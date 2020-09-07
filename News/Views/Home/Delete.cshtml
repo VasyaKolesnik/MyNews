@@ -1,0 +1,27 @@
+﻿@model News.Models.FakeNews
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление новости</h2>
+<dl>
+    <dt>Название</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+
+    <dt>Текст</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Text)
+    </dd>
+
+    <dt>Дата</dt>
+    <dd>
+        @Html.DisplayFor(model => model.Date)
+    </dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
